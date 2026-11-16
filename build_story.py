@@ -40,8 +40,9 @@ Do not use copyrighted characters.
         timeout=120
     )
 
-        if not response.ok:
-        print("GEMINI API ERROR:", response.status_code)
+    if not response.ok:
+        print("GEMINI API ERROR:",
+response.status_code)
         print("DETAILS:", response.text)
         response.raise_for_status()
 
