@@ -40,7 +40,11 @@ Do not use copyrighted characters.
         timeout=120
     )
 
-    response.raise_for_status()
+        if not response.ok:
+        print("GEMINI API ERROR:", response.status_code)
+        print("DETAILS:", response.text)
+        response.raise_for_status()
+
     data = response.json()
 
     return data["candidates"][0]["content"]["parts"][0]["text"]
